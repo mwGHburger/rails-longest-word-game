@@ -23,10 +23,10 @@ class GamesController < ApplicationController
         word_hash = JSON.parse(filepath.read)
         # if word is valid word
         if word_hash["found"] == true
-          return @result = "YAS"
+          return @result = "Congratulations! #{@word.upcase} is a valid English word!"
         # else sorry not a valid word
         else
-          return @result = "Sorry"
+          return @result = "Sorry but #{@word.upcase} does not seem to be a valid English word!"
         end
 
       else
